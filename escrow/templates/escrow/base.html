@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mercato Rwanda | HEIMAT50 Ltd{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+    <style>
+        .mobile-menu { display: none; }
+        .mobile-menu.active { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen font-sans">
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="/" class="flex items-center gap-3">
+                    <img src="{% static 'images/mercato_logo.png' %}" alt="Mercato Logo" class="h-12 w-auto border rounded shadow-sm bg-slate-100" onerror="this.src='https://ui-avatars.com/api/?name=Mercato&background=2563eb&color=fff'">
+                    <span class="text-2xl font-black tracking-tight text-slate-900">MERCATO<span class="text-blue-600">.RW</span></span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8 text-sm font-bold text-slate-600 uppercase tracking-wide">
+                    <a href="/" class="hover:text-blue-600">Home</a>
+                    <a href="/privacy" class="hover:text-blue-600">Privacy</a>
+                    <a href="/terms" class="hover:text-blue-600">Terms</a>
+                    <a href="https://wa.me/250795464615" class="bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 shadow-lg transition">Service Registration</a>
+                </div>
+
+                <button onclick="toggleMenu()" class="md:hidden text-slate-800 text-2xl"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-2xl">
+            <a href="/" class="block font-bold text-slate-800">Home</a>
+            <a href="/privacy" class="block font-bold text-slate-800">Privacy Policy</a>
+            <a href="/terms" class="block font-bold text-slate-800">Terms of Service</a>
+            <a href="https://wa.me/250795464615" class="block bg-blue-600 text-white text-center py-4 rounded-2xl font-black">CHAT ON WHATSAPP</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow">{% block content %}{% endblock %}</main>
+
+    <footer class="bg-slate-900 text-slate-300 py-16 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-white text-lg font-bold mb-4">HEIMAT50 Ltd</h3>
+                <p class="text-sm leading-relaxed mb-2"><strong>Category:</strong> Limited by shares</p>
+                <p class="text-sm leading-relaxed mb-2"><strong>CEO:</strong> Bertin KARINDA</p>
+                <p class="text-sm leading-relaxed mb-4"><strong>Headquarters:</strong> Kacyiru, Gasabo, Kigali, Rwanda</p>
+                <p class="text-sm"><strong>Email:</strong> admin@mercato.rw</p>
+                <p class="text-sm"><strong>Phone:</strong> +250 795 464 615, +250 789 512 989</p>
+            </div>
+            <div class="flex flex-col md:items-end">
+                <div class="flex space-x-6 text-xs font-black uppercase tracking-widest mb-6">
+                    <a href="/privacy" class="hover:text-white">Privacy</a>
+                    <a href="/terms" class="hover:text-white">Terms</a>
+                    <a href="mailto:admin@mercato.rw" class="hover:text-white">Email Us</a>
+                </div>
+                <p class="text-xs text-slate-500">© 2026 Mercato Rwanda by HEIMAT50 Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }</script>
+</body>
+</html>

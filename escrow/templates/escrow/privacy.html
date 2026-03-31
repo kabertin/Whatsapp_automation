@@ -1,0 +1,71 @@
+{% extends 'escrow/base.html' %}
+
+{% block title %}Privacy Policy | HEIMAT50 Ltd (Mercato.rw){% endblock %}
+
+{% block content %}
+<section class="py-12 px-6 bg-white">
+    <div class="max-w-4xl mx-auto border border-slate-100 p-8 md:p-12 shadow-sm rounded-2xl">
+        <header class="border-b border-slate-100 pb-8 mb-8">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Privacy Policy</h1>
+            <p class="text-slate-600"><strong>Entity:</strong> HEIMAT50 Ltd</p>
+            <p class="text-slate-600"><strong>Platform:</strong> Mercato.rw (WhatsApp Business Automation)</p>
+            <p class="text-slate-600"><strong>Last Updated:</strong> March 4, 2026</p>
+        </header>
+
+        <div class="space-y-10 text-slate-700 leading-relaxed text-sm md:text-base">
+            
+            <section>
+                <h2 class="text-xl font-bold text-slate-900 mb-4">1. Information We Collect</h2>
+                <p class="mb-4">As required by Meta Platform Terms, we disclose that we collect information directly from you and automatically via the WhatsApp Business API:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Direct User Input:</strong> We collect your phone number, display name, and any service requirements or portfolio data you provide during your interaction with our WhatsApp bot.</li>
+                    <li><strong>Automatic Collection (Server Logs):</strong> Our servers automatically collect standard log information including IP addresses, browser type (when visiting mercato.rw), and timestamps of interactions.</li>
+                    <li><strong>Third-Party Data:</strong> We receive metadata via the Meta Graph API necessary to route messages and identify your account session.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-slate-900 mb-4">2. Purpose of Processing and How We Use Information</h2>
+                <p class="mb-4">HEIMAT50 Ltd processes your data for the following specific purposes:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Service Delivery:</strong> To connect customers with verified service providers in Rwanda.</li>
+                    <li><strong>User Recognition:</strong> To recognize your account and preferences the next time you use our WhatsApp service.</li>
+                    <li><strong>Security:</strong> To monitor for fraudulent activity and protect the integrity of the Mercato network.</li>
+                    <li><strong>Communications:</strong> To send transaction-related updates or promotional information (only if you have opted in).</li>
+                </ul>
+            </section>
+
+            <section class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-600">
+                <h2 class="text-xl font-bold text-slate-900 mb-4">3. Data Deletion Rights and Instructions</h2>
+                <p class="mb-4">In compliance with Meta’s Data Deletion Policy, users have the right to request the removal of their personal data from our systems at any time.</p>
+                <p class="font-bold mb-2">How to request deletion:</p>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li>Send an email to <a href="mailto:admin@mercato.rw" class="text-blue-600 underline">admin@mercato.rw</a> with the subject line <strong>"Data Deletion Request"</strong>.</li>
+                    <li>Include the <strong>Phone Number</strong> associated with your WhatsApp account.</li>
+                    <li>Our team will process the request and delete your user profile from our AWS servers within 48 hours. You will receive a confirmation email once completed.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-slate-900 mb-4">4. Public Accessibility and Compliance</h2>
+                <p>
+                    This Privacy Policy is hosted on a publicly available, non-geo-blocked URL (https://mercato.rw/privacy) accessible to all users and Meta’s web crawlers. HEIMAT50 Ltd maintains this policy to remain compliant with Meta Platform Terms Section 4.a.
+                </p>
+            </section>
+
+            <section class="pt-8 border-t border-slate-100">
+                <h2 class="text-xl font-bold text-slate-900 mb-4">5. Contact Our Data Controller</h2>
+                <p><strong>Company:</strong> HEIMAT50 Ltd</p>
+                <p><strong>CEO:</strong> Bertin KARINDA</p>
+                <p><strong>Address:</strong> Kacyiru, Gasabo, Kigali, Rwanda</p>
+                <p><strong>Email:</strong> <a href="mailto:admin@mercato.rw" class="text-blue-600 font-bold">admin@mercato.rw</a></p>
+                <p><strong>Phone:</strong> +250 795 464 615, +250789512989</p>
+            </section>
+
+            <div class="text-center">
+                <a href="/" class="text-blue-600 font-bold hover:underline italic">← Return Home</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

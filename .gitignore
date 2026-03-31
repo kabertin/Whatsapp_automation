@@ -1,0 +1,19 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+
+# Secrets & Config
+.env
+
+# WhatsApp Web Session Data (VERY IMPORTANT to ignore)
+.wwebjs_auth/
+.wwebjs_cache/
+
+# Large Media & Static
+media/
+staticfiles/
+cron_log.log
+
+# Database (Only ignore if you don't want to push your local dev data)
+db.sqlite3

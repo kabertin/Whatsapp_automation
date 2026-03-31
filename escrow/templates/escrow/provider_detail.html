@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ provider.business_name }} - Mercato Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .profile-header { background: #f8f9fa; padding: 40px 0; border-bottom: 1px solid #dee2e6; }
+        .kyc-img { width: 100%; max-width: 400px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+        .badge-verified { background-color: #28a745; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="profile-header text-center">
+    <img src="https://www.mercato.rw/static/images/mercato_logo.png" height="60" class="mb-3">
+    <h1>{{ provider.business_name }}</h1>
+    <p class="text-muted">{{ provider.category.name }} | {{ provider.district }}, {{ provider.sector }}</p>
+    {% if provider.is_verified %}
+        <span class="badge badge-verified">✓ Verified Provider</span>
+    {% else %}
+        <span class="badge bg-warning">Under Review</span>
+    {% endif %}
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Work Portfolio</h3>
+            <hr>
+            <div class="portfolio-grid">
+                {% for img in provider.portfolio_images %}
+                    <img src="/media/{{ img }}" class="img-fluid rounded shadow-sm">
+                {% empty %}
+                    <p class="text-muted">No portfolio images uploaded.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Verification Documents</h5>
+                    <p class="small text-muted">Internal Use Only</p>
+                    
+                    <h6>ID Front</h6>
+                    <img src="/media/{{ provider.id_front }}" class="kyc-img">
+
+                    <h6>ID Back</h6>
+                    <img src="/media/{{ provider.id_back }}" class="kyc-img">
+
+                    <h6>Face Scan / RDB</h6>
+                    {% if provider.rdb_doc and ".pdf" in provider.rdb_doc %}
+                        <a href="/media/{{ provider.rdb_doc }}" target="_blank" class="btn btn-outline-primary w-100">📄 View RDB PDF</a>
+                    {% else %}
+                        <img src="/media/{{ provider.face_scan|default:provider.rdb_doc }}" class="kyc-img">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
