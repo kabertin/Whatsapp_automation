@@ -91,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'solo_discovery',
         'USER': 'admin',
-        'PASSWORD': 'Olivakarinda1@', # The one you set in Step 2
+        'PASSWORD': '************', # The one you set in Step 2 set it in .env file then make reference
         'HOST': 'localhost',
         'PORT': '5432',
     }
